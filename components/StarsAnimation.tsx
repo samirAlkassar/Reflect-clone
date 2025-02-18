@@ -5,8 +5,15 @@ import { motion } from "framer-motion";
 
 export const StarsAnimation = () => {
 
-    const [stars, setStars] = useState<any[]>([]);
-
+    const [stars, setStars] = useState<Star[]>([]);
+    type Star = {
+        id: number;
+        x: number;
+        y: number;
+        size: number;
+        opacity: number;
+        speed: number;  
+    }
     // Function to generate a random star
     const generateStars = (count: number) => {
         return Array.from({ length: count }, () => ({

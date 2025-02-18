@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { Button } from "../components/Button"
 import { HamburgerIcon } from "./icons/HamburgerIcon"
+import Image from "next/image"
+
 export const Header = () => {
     return (
         <header className="max-w-[1296px] fixed z-50 top-0 left-0 right-0 backdrop-blur-[16px] mx-auto py-11 px-9 flex justify-between items-center after:absolute after:w-full after:h-[1px] after:bg-nav-border after:bottom-0 after:left-0">
@@ -14,7 +16,7 @@ export const Header = () => {
 const HeaderLogo = () =>{
     return (
         <div className="flex items-center">
-        <img src="/logo.png" alt="Reflect" width={36} height={36} className="mr-5"/>
+        <Image src="/logo.png" alt="Reflect" width={36} height={36} className="mr-5"/>
         <h1>Reflect</h1>
         </div>
     )

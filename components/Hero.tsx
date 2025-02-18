@@ -1,6 +1,7 @@
 import { Button } from "../components/Button"
 import { Stars } from "../components/icons/stars"
 import { BlackHole } from "../components/BlackHole"
+import Image from "next/image"
 
 export const Hero = () => {
     return (
@@ -17,7 +18,7 @@ export const Hero = () => {
 
             <div className="relative lg:mt-[232px] mt-[220px]">
                 <div className="absolute inset-0 bg-heroImage-gradient z-20" />
-                <img
+                <Image
                     src="/home-image.png"
                     alt="Hero Image"
                     className="relative z-10 backdrop-blur-[25px] lg:w-[1200px] w-[350px] h-[680px]"

@@ -14,9 +14,10 @@ export const Hero = () => {
                 <br className="lg:hidden block" /> with Reflect</h1>
             <p className="text-primary-subtext text-md mt-3 z-30">Never miss a note, idea or connection.</p>
 
-            <BlackHole />
+            
 
             <div className="relative lg:mt-[232px] mt-[220px]">
+                <BlackHole />
                 <div className="absolute inset-0 bg-heroImage-gradient z-20" />
                 <Image
                     src="/home-image.png"

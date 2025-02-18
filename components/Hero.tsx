@@ -21,6 +21,8 @@ export const Hero = () => {
                 <Image
                     src="/home-image.png"
                     alt="Hero Image"
+                    width={1200}
+                    height={680}
                     className="relative z-10 backdrop-blur-[25px] lg:w-[1200px] w-[350px] h-[680px]"
                 />
             </div>

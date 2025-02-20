@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 export const StarsAnimation = () => {
 
     const [stars, setStars] = useState<Star[]>([]);
+    const removeStar = (id: number) => {
+        setStars((prev) => prev.filter((star) => star.id != id))
+    }
     type Star = {
         id: number;
         x: number;
@@ -31,9 +34,9 @@ export const StarsAnimation = () => {
         const interval = setInterval(() => {
             setStars((prev) => {
                 const newStars = generateStars(50);
-                return [...prev, ...newStars].slice(-100); // Keep only last 100 stars
+                return [...prev, ...newStars].slice(-300); // Keep only last 100 stars
             });
-        }, 500);
+        }, 3000);
 
         return () => clearInterval(interval);
     }, []);
@@ -42,24 +45,25 @@ export const StarsAnimation = () => {
         <>
             {stars.map((star) => (
                 <motion.div
+                    onAnimationEnd={() => removeStar(star.id)}
                     key={star.id}
                     initial={{
                         left: `${star.x}%`,
                         top: `${star.y}%`,
-                        opacity: star.opacity,
+                        opacity: 0.2,
                         scale: star.size / 6, // Adjust size scaling
                     }}
                     animate={{
                         top: "50%", // Move to the center
                         left: "50%", // Center horizontally
-                        opacity: 0, // Fade out
-                        scale: 0, // Shrink to disappear
+                        opacity: 1, // Fade out
+                        scale: 0.1, // Shrink to disappear
                     }}
                     transition={{
                         duration: star.speed,
                         ease: "easeOut",
                     }}
-                    className="absolute bg-orbit-stroke rounded-full"
+                    className="absolute bg-white rounded-full"
                     style={{ width: `${star.size}px`, height: `${star.size}px` }}
                 />
             ))}

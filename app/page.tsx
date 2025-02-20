@@ -2,6 +2,7 @@
 import { Header } from "@/components/header";
 import { Container } from "@/components/container";
 import { Hero } from "@/components/Hero";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -12,9 +13,9 @@ export default function Home() {
       <Container>
         <Hero />
       </Container>
-      {/* <Container>
-        <footer>Footer</footer>
-      </Container> */}
+      <Container>
+        <Footer />
+      </Container>
     </div>
   );
 }
